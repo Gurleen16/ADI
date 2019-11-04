@@ -15,9 +15,9 @@ int KnapSack(int i,int c)
       if(j==0||k==0)
       s[j][k]=0;
       else if(w[j]<=c)
-      s[j][k]=s[j-1][c-w[j]]+p[j] > s[j-1][c] ?s[j-1][c-w[j]]+p[j] : s[j-1][c];
+      s[j][k]=s[j-1][k-w[j-1]]+p[j-1] > s[j-1][k] ?s[j-1][k-w[j-1]]+p[j-1] : s[j-1][k];
       else
-      s[j][k]=s[j-1][c];
+      s[j][k]=s[j-1][k];
     }
   }
   return s[i][c];
